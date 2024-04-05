@@ -8,9 +8,9 @@
 #define TURN_IN_PIN 48
 
 Servo servo;
-int pos = 120;
-int delay_ms = 1000;
-bool motor_enabled = true;
+int pos = 115;
+int delay_ms = 800;
+bool motor_enabled = false;
 
 int delay_max = 2000;
 int delay_min = 150;
@@ -53,7 +53,7 @@ void handle_input() {
     prev_zero_input = current_zero_input;
 
     current_turn_input = digitalRead(TURN_IN_PIN);
-    if (current_turn_input == HIGH && prev_zero_input != HIGH) servo.write(pos); 
+    if (current_turn_input == HIGH && prev_turn_input != HIGH) servo.write(pos); 
     prev_turn_input = current_turn_input;
 
     prev_motor = current_motor;
