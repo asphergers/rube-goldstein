@@ -10,7 +10,7 @@
 Servo servo;
 int pos = 115;
 int delay_ms = 800;
-bool motor_enabled = false;
+bool motor_enabled = true;
 
 int delay_max = 2000;
 int delay_min = 150;
